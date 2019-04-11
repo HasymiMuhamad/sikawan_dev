@@ -12,7 +12,7 @@ router.post('/teacher', teacherController.create );
 router.get('/teacher', teacherController.find);
 router.get('/teacher/:id', teacherController.findOne);
 router.put('/teacher/:id', teacherController.update);
-router.delete('/teacher', teacherController.delete);
+router.delete('/teacher/:id', teacherController.delete);
 
 // //CRUD Student
 // router.post('/student', studentController.create );

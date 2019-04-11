@@ -28,7 +28,11 @@ exports.create = function (req, res){
     role: req.body.role
   })
 
-  teacher.save()
+  teacher.save(
+    fs.writeFile(`public/${req.params.id}.jpg`, function (err){
+            if (err) throw err;
+        })
+  )
 
   .then(function(teacher){
     res.status(200).json({
@@ -79,11 +83,12 @@ exports.findOne = function(req, res){
 
 exports.update = function(req, res){
   teacherModel.findByIdAndUpdate({_id:req.params.id}, {$set: req.body})
-    
+ 
+  
   .then(function(teacher){
     res.status(200).json({
       success: true,
-      data: data
+      data: req.body 
     })
   })
   .catch(function(err){
@@ -94,22 +99,51 @@ exports.update = function(req, res){
   })
 }
 
+exports.delete = function (req, res) {
+  teacherModel.findOneAndDelete({_id : req.params.id}, function (err) {
+      if (err) {
+          res.status(400).json({
+            success: false,
+            message: err.message
+          })
+      }
+      fs.unlinkSync(`public/${req.params.id}.jpg`);   
+      res.status(200).json({
+          success: true,
+          message: 'Data is deleted successfully'
+      })
+      
+  })
+};
 
-exports.delete = function(req, res){
-  teacher.findByIdAndDelete(req.body.id)
-  .then(function(teacher){
-    res.status(200).json({
-      success: true,
-      data: teacher
-    })
-  })
-  .catch(function(err){
-    res.status(400).json({
-      success: false,
-      message: err.message || 'failed to delete data'
-    })
-  })
-}
+
+// exports.delete = function(req, res){
+//   teacherModel.findOneAndDelete({id:req.params.id}, function(err){
+//     if (err){
+//       res.status(400).json({
+//         success: false,
+//         message: err.message
+//       }) 
+//         res.status(200).json({
+//           success: true,
+//           message: 'teacher data is deleted successfully'
+//         })
+      
+//     }})
+  
+  // .then(function(teacher){
+  //   res.status(200).json({
+  //     success: true,
+  //     data: teacher
+  //   })
+  // })
+  // .catch(function(err){
+  //   res.status(400).json({
+  //     success: false,
+  //     message: err.message || 'failed to delete data'
+  //   })
+  // })
+
 
 
 // exports.classroom = (req, res, next) =>{

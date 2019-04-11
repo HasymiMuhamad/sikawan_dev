@@ -63,7 +63,7 @@ const teacherSchema = new teacher({
       match: [/([0-9]+)/, 'wrong format']
     },
     school:{
-      type: teacher.Types.ObjectId,
+      // type: teacher.Types.ObjectId,
       // ref:'school',
       // autopopulate: {
       //   select: 'generalDetails.name -_id',
@@ -71,11 +71,11 @@ const teacherSchema = new teacher({
       // }
     },
     attendance:[{
-      type: teacher.Types.ObjectId,
+      // type: teacher.Types.ObjectId,
       // ref: 'attendance'
     }],
     teaching:[{ // list of classroom and subjects this teacher teach
-      type:teacher.Types.ObjectId,
+      // type:teacher.Types.ObjectId,
       // ref:'teaching',
       // autopopulate: {
       //   select: '-_id -teacher -school',
@@ -83,8 +83,8 @@ const teacherSchema = new teacher({
       // }
     }],
     schedule: [{
-      type: teacher.Types.ObjectId,
-      // ref:'schedule'
+      // type: teacher.Types.ObjectId,
+      // // ref:'schedule'
     }],
 
 
