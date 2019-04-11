@@ -5,7 +5,8 @@ const mongoose = require('mongoose'),
   // functions = require('../model/functions');
 
 var studentSchema = new Student({
-  personalDetails:{
+  
+  //personalDetails
     fullname:{ 
       type: String,
       required: true,
@@ -49,9 +50,9 @@ var studentSchema = new Student({
     image:{
       type: String,
       default: ''
-    }
-  },
-  academicDetails:{
+    },
+
+  //academicDetails
     nisn :{
       type: String,
       required: [true, 'can\'t be empty'], 
@@ -100,9 +101,10 @@ var studentSchema = new Student({
     attendance:[{
       type: Student.Types.ObjectId,
       ref: 'attendance'
-    }]
-  },
-  account:{
+    }],
+
+
+  //account
     email: {
       type: String,
       lowercase: true,
@@ -116,16 +118,15 @@ var studentSchema = new Student({
       required: true,
       index: true,
       minlength: 6
-    }
-  },
-  role: {
-    type: String,
-    index: true,
-    default: 'student'
-  },
-  complain:[{
-    type: Student.Types.ObjectId,
-    ref:'complain'
+    },
+    role: {
+      type: String,
+      index: true,
+      default: 'student'
+    },
+    complain:[{
+      type: Student.Types.ObjectId,
+      ref:'complain'
   }]
 },
 {timestamps:{
