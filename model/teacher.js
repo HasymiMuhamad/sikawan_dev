@@ -1,11 +1,13 @@
 const mongoose = require('mongoose'),
   teacher = mongoose.Schema,
   autopopulate = require('mongoose-autopopulate'),
-  validate = require('mongoose-unique-validator');
+  validate = require('mongoose-unique-validator'),
+  bcrypt = require('bcrypt');
   // functions = require('../model/functions')
 
 const teacherSchema = new teacher({
-  personalDetails:{
+
+  //personalDetails
     fullname:{
       type: String,
       required: true,
@@ -50,9 +52,9 @@ const teacherSchema = new teacher({
     image:{
       type: String,
       default: ''
-    }
-  },
-  academicDetails:{
+    },
+
+  //academicDetails
     nip :{
       type: String,
       required: [true, 'can\'t be empty'], 
@@ -61,31 +63,32 @@ const teacherSchema = new teacher({
       match: [/([0-9]+)/, 'wrong format']
     },
     school:{
-      type: teacher.Types.ObjectId,
-      ref:'school',
-      autopopulate: {
-        select: 'generalDetails.name -_id',
-        maxDepth: 1
-      }
+      // type: teacher.Types.ObjectId,
+      // ref:'school',
+      // autopopulate: {
+      //   select: 'generalDetails.name -_id',
+      //   maxDepth: 1
+      // }
     },
     attendance:[{
-      type: teacher.Types.ObjectId,
-      ref: 'attendance'
+      // type: teacher.Types.ObjectId,
+      // ref: 'attendance'
     }],
     teaching:[{ // list of classroom and subjects this teacher teach
-      type:teacher.Types.ObjectId,
-      ref:'teaching',
-      autopopulate: {
-        select: '-_id -teacher -school',
-        maxDepth: 2
-      }
+      // type:teacher.Types.ObjectId,
+      // ref:'teaching',
+      // autopopulate: {
+      //   select: '-_id -teacher -school',
+      //   maxDepth: 2
+      // }
     }],
     schedule: [{
-      type: teacher.Types.ObjectId,
-      ref:'schedule'
-    }]
-  },
-  account:{
+      // type: teacher.Types.ObjectId,
+      // // ref:'schedule'
+    }],
+
+
+  //account
     email: {
       type: String,
       lowercase: true,
@@ -99,9 +102,8 @@ const teacherSchema = new teacher({
       required: true,
       index: true,
       minlength: 6
-    }
-  },
-  role: {
+    },
+    role: {
     type: String,
     index: true,
     default: 'teacher'
@@ -111,6 +113,11 @@ const teacherSchema = new teacher({
   createdAt:'Created at',
   updatedAt:'Updated at'
 }});
+
+teacherSchema.pre('save', function(next) {
+  this.password = bcrypt.hashSync(this.password, 10)
+  next()
+})
 
 // Enable Mongoose getter functions
 teacherSchema.set('toObject', { getters: true });
