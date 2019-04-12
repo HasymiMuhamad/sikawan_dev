@@ -9,7 +9,11 @@ var teach = new teaching ({
     type: teaching.Types.ObjectId,
     ref: 'classroom',
     autopopulate: {
+<<<<<<< HEAD
       select: 'fullname -_id',
+=======
+      select: 'fullname',
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
       maxDepth: 1
     }
   },

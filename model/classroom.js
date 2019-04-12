@@ -29,25 +29,27 @@ var classroomSchema = new classroom({
     lowercase: true
   },
   students:[{
-    type: classroom.Types.ObjectId,
-    ref: 'student',
-    autopopulate: {
-      select: 'personalDetails.fullname',
-      maxDepth: 1
-    },
+    // type: classroom.Types.ObjectId,
+    // ref: 'student',
+    // autopopulate: {
+    //   select: 'personalDetails.fullname academicDetails.score',
+    //   maxDepth: 1
+    // },
   }],
   courses: [{
-    type: classroom.Types.ObjectId,
-    ref: 'teaching',
-    autopopulate:{
-      select: 'subjects teacher -_id',
-      maxDepth: 2
-    }
+    // type: classroom.Types.ObjectId,
+    // ref: 'teaching',
+    // autopopulate:{
+    //   select: 'subjects teacher -_id',
+    //   maxDepth: 2
+    // }
   }],
-  schedule:[{
-    type: classroom.Types.ObjectId,
-    ref: 'student'
-  }],
+  schedule:[
+  //   {
+  //   // type: classroom.Types.ObjectId,
+  //   // ref: 'student'
+  // }
+  ],
 }, {
   timestamps:{
     createdAt:'Created at',

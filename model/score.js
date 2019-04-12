@@ -38,7 +38,11 @@ var scoreSchema = new score({
 },{
   timestamps:{
     createdAt:'Created at',
+<<<<<<< HEAD
     updatedAt:'Udated at'
+=======
+    updatedAt:'Updated at'
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
   }
 });
 
