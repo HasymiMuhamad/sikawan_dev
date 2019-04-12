@@ -15,10 +15,10 @@ const express = require('express'),
 
 // router.get('/', studentControl.showAll);
 
-router.get('/', studentControl.profile); 
-router.get('/attendance', studentControl.attendance); // get student attendance
-router.get('/score', studentControl.score); // get student scores
-router.post('/complain', studentControl.complain); // make complain
-router.get('/complain', studentControl.complains); // get complains
+// router.get('/', studentControl.profile); 
+// router.get('/attendance', studentControl.attendance); // get student attendance
+// router.get('/score', studentControl.score); // get student scores
+// router.post('/complain', studentControl.complain); // make complain
+// router.get('/complain', studentControl.complains); // get complains
 
 module.exports = router;
