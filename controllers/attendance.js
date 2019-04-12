@@ -3,11 +3,16 @@ const Attendance = require('../model/attendance'),
 
 exports.Create = (req, res, next) => {
   let attendance = new Attendance({
+<<<<<<< HEAD
     teacher : req.id,
+=======
+    teacher: req.id,
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
     student: req.body.studentId,
     subject: req.body.subjectId,
     isAttend: req.body.isAttend,
     description: req.body.description
+<<<<<<< HEAD
   })
 
   attendance.save()
@@ -24,6 +29,24 @@ exports.Create = (req, res, next) => {
   })
   .catch(next)
 }
+=======
+  });
+
+  attendance.save()
+    .then(() => {
+      studentsModel.findByIdAndUpdate(req.body.studentId, { $push: { 'academicDetails.attendance': attendance } })
+        .then((result) => {
+          res.status(201).json({
+            success: true,
+            message: 'Attendance',
+            data: attendance
+          });
+        })
+        .catch(next);
+    })
+    .catch(next);
+};
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
 
 // exports.updateAttend = (req, res) => {
 //   Attendance.findById({teacher: req.id}, 'isAttend', (err, data) => {

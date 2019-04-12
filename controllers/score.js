@@ -73,7 +73,10 @@ exports.Details = (req, res, next) => {
   });
 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
 exports.UpdateScore = (req, res, next) => {
   Score.findByIdAndUpdate(req.params.id, {$set: {
     category: req.body.category,
@@ -95,6 +98,7 @@ exports.UpdateScore = (req, res, next) => {
 
 };
 
+<<<<<<< HEAD
 exports.Delete = (req, res, next) => {
   Score.findByIdAndRemove({students:req.body.studentsId, teacher: req.id})
     .then(() => {
@@ -105,3 +109,19 @@ exports.Delete = (req, res, next) => {
     })
     .catch(next);
 };
+=======
+exports.deleteScore = (req, res, next) => {
+  scoreModel.findByIdAndRemove(req.params.id)
+    .then((score)=> {
+      studentModel.findByIdAndUpdate(score.students, {$pull:{'academicDetails.score':req.params.id}},{new: true})
+        .exec()
+        .then(() => {
+          res.status(204).json({
+            success: true,
+            message: 'Score was Deleted'
+          });
+        });
+    })
+    .catch(next);
+};
+>>>>>>> 8a51e620483c88a7e2b7657fb12f21792507c2a2
