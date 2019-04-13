@@ -785,6 +785,9 @@
 ::1 - - [04/Apr/2019:04:18:51 +0000] "POST /login HTTP/1.1" 200 459 "-" "PostmanRuntime/7.6.0"
 ::1 - - [04/Apr/2019:04:19:07 +0000] "POST /login HTTP/1.1" 200 302 "-" "PostmanRuntime/7.6.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
 ::1 - - [11/Apr/2019:03:53:44 +0000] "POST /school/teacher HTTP/1.1" 400 65 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:03:55:26 +0000] "POST /school/teacher HTTP/1.1" 400 139 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:03:55:51 +0000] "POST /school/teacher HTTP/1.1" 400 136 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
@@ -888,6 +891,7 @@
 ::1 - - [11/Apr/2019:10:12:56 +0000] "DELETE /school/teacher/5caf12da3c80b2248e63ee25 HTTP/1.1" 200 57 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:10:14:02 +0000] "GET /school/teacher/5caf12943c80b2248e63ee24 HTTP/1.1" 400 514 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:10:15:24 +0000] "PUT /school/teacher/5caf12943c80b2248e63ee24 HTTP/1.1" 200 247 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
+<<<<<<< HEAD
 ::1 - - [11/Apr/2019:14:33:34 +0000] "POST /school/teacher HTTP/1.1" 400 47 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:14:48:30 +0000] "POST /school/teacher HTTP/1.1" 400 47 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [11/Apr/2019:14:48:34 +0000] "POST /school/teacher HTTP/1.1" 400 47 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
@@ -1350,3 +1354,5 @@
 ::1 - - [12/Apr/2019:08:41:33 +0000] "POST /school/teacher HTTP/1.1" 200 557 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [12/Apr/2019:08:43:31 +0000] "POST /school/teacher HTTP/1.1" 200 557 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
 ::1 - - [12/Apr/2019:08:45:53 +0000] "POST /school/teacher HTTP/1.1" 200 548 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36"
+=======
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001

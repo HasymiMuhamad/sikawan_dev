@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 // const studentModel = require('../model/student'),
 const bcrypt = require('bcrypt'),
   // fs = require('fs'),
+=======
+const studentModel = require('../model/student'),
+  bcrypt = require('bcrypt');
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
   // attendanceModel = require('../model/attendance'),
   // scheduleModel = require('../model/schedule'),
   teacherModel = require('../model/teacher');
@@ -27,6 +32,7 @@ exports.create = function (req, res){
     email: req.body.email,
     password: req.body.password,
     role: req.body.role
+<<<<<<< HEAD
   });
 
   teacher.save(
@@ -148,6 +154,99 @@ exports.delete = function (req, res) {
 };
 
 
+=======
+  })
+
+  teacher.save(
+    fs.writeFile(`public/${req.params.id}.jpg`, function (err){
+            if (err) throw err;
+        })
+  )
+
+  .then(function(teacher){
+    res.status(200).json({
+      success: true,
+      message: 'teacher data is created successfully',
+      data: teacher
+    })
+  })
+  .catch(function(err){
+    res.status(400).json({
+      success: false,
+      message: err.message || 'failed to create data teacher'
+    })
+  })
+}
+
+exports.find = function(req, res){
+teacherModel.find(function(err, data){
+  if (err){
+    res.status(400).json({
+      success: false,
+      message: err.message
+    })
+  } else {
+    res.status(200).json({
+      success: true,
+      data: data
+    })
+  }
+})
+}
+
+exports.findOne = function(req, res){
+  teacherModel.findById({_id: req.params.id}, function(err, data){
+    if (err){
+      res.status(400).json({
+        success: false,
+        message: err.message
+      })
+    } else {
+      res.status(400).json({
+        success: true,
+        data: data
+      })
+    }
+  })
+}
+
+exports.update = function(req, res){
+  teacherModel.findByIdAndUpdate({_id:req.params.id}, {$set: req.body})
+ 
+  
+  .then(function(teacher){
+    res.status(200).json({
+      success: true,
+      data: req.body 
+    })
+  })
+  .catch(function(err){
+    res.status(400).json({
+      success: false,
+      message: err.message || 'failed to update data'
+    })
+  })
+}
+
+exports.delete = function (req, res) {
+  teacherModel.findOneAndDelete({_id : req.params.id}, function (err) {
+      if (err) {
+          res.status(400).json({
+            success: false,
+            message: err.message
+          })
+      }
+      fs.unlinkSync(`public/${req.params.id}.jpg`);   
+      res.status(200).json({
+          success: true,
+          message: 'Data is deleted successfully'
+      })
+      
+  })
+};
+
+
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
 // exports.delete = function(req, res){
 //   teacherModel.findOneAndDelete({id:req.params.id}, function(err){
 //     if (err){
@@ -162,6 +261,7 @@ exports.delete = function (req, res) {
       
 //     }})
   
+<<<<<<< HEAD
 // .then(function(teacher){
 //   res.status(200).json({
 //     success: true,
@@ -174,6 +274,20 @@ exports.delete = function (req, res) {
 //     message: err.message || 'failed to delete data'
 //   })
 // })
+=======
+  // .then(function(teacher){
+  //   res.status(200).json({
+  //     success: true,
+  //     data: teacher
+  //   })
+  // })
+  // .catch(function(err){
+  //   res.status(400).json({
+  //     success: false,
+  //     message: err.message || 'failed to delete data'
+  //   })
+  // })
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
 
 
 
@@ -284,4 +398,8 @@ exports.delete = function (req, res) {
 //         .catch(next);
 //     })
 //     .catch(next);
+<<<<<<< HEAD
 //  };
+=======
+//  };
+>>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
