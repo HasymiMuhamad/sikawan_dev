@@ -56,15 +56,9 @@ app.post('/login',cors(), login.authentication);
 app
   // .use('/student', cors(), auth.isAuthentication, studentRoute)
   // .use('/school', cors(), auth.isAuthentication, schoolRoute)
-<<<<<<< HEAD
   .use('/school', cors(), schoolRoute);
 // .use('/admin',cors(), adminRoute) // for now admin route has free control (no authorization)
 // .use('/teacher', cors(), auth.isAuthentication, teacherRoute);
-=======
-  .use('/school', cors(), schoolRoute)
-  // .use('/admin',cors(), adminRoute) // for now admin route has free control (no authorization)
-  // .use('/teacher', cors(), auth.isAuthentication, teacherRoute);
->>>>>>> f4d191ab544cb274a399ba8394ff2dbe10ac0001
 
 // error handling middleware
 app.use(errors.error);
