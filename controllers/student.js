@@ -2,7 +2,7 @@ const studentModel = require('../model/student'),
   // complainModel = require('../model/complain'),
   //fs = require('fs');
 
-require('dotenv').config();
+const require('dotenv').config();
 
 
 
