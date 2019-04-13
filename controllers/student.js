@@ -1,6 +1,6 @@
 const studentModel = require('../model/student'),
   // complainModel = require('../model/complain'),
-  fs = require('fs');
+  //fs = require('fs');
 
 require('dotenv').config();
 
@@ -29,7 +29,7 @@ exports.create = function (req, res){
     complain:[]
   });
   student.save(
-    fs.writeFile(`public/${req.params.id}.jpg`, function (err){
+    //fs.writeFile(`public/${req.params.id}.jpg`, function (err){
       if (err) throw err;
     })
   )
