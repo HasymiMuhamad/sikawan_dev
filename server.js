@@ -13,7 +13,7 @@ const express = require('express'),
   auth = require('./middleware/isAuth'),
   login = require('./controllers/authentication');
 
-//require('dotenv/config');
+require('dotenv/config');
 
 // init app
 const app = express();

@@ -1,8 +1,8 @@
-const studentModel = require('../model/student'),
+const studentModel = require('../model/student');
   // complainModel = require('../model/complain'),
   //fs = require('fs');
 
-require('dotenv').config();
+const env = require('dotenv').config();
 
 
 
@@ -30,8 +30,8 @@ exports.create = function (req, res){
   });
   student.save(
     //fs.writeFile(`public/${req.params.id}.jpg`, function (err){
-      if (err) throw err;
-    })
+    //   if (err) throw err;
+    // })
   )
     .then(function(student){
       res.status(200).json({
